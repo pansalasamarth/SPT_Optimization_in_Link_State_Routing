@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Routing - OSPF Protocol Simulator</title>
+    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1>Network Routing Simulator</h1><br>
+            <p>Shortest Path Tree (SPT) Optimization in Link State Routing</p>
+        </header>
+
+        <section class="form-section">
+            <div class="form-card">
+                <h2>Network Setup</h2>
+                <label for="nodes">Number of Routers:</label>
+                <input type="number" id="nodes" min="1" placeholder="Enter number of routers">
+
+                <label for="edges">Number of Links:</label>
+                <input type="number" id="edges" min="1" placeholder="Enter number of Links">
+
+                <button id="initializeGraph">Initialize Network</button>
+            </div>
+
+            <div class="form-card">
+                <h2>Define Connection Paths</h2>
+                <div id="edgeInputs"></div>
+            </div>
+        </section>
+
+        <section class="path-section">
+            <div class="form-card">
+                <h2>Find Optimal Route</h2>
+                <label for="source">Source Router:</label>
+                <input type="number" id="source" min="1" placeholder="Enter source router">
+
+                <label for="destination">Destination Router:</label>
+                <input type="number" id="destination" min="1" placeholder="Enter destination router">
+                
+                <button id="calculatePaths">Show Link State Packets & Routing Tables</button>
+            </div>
+        </section>
+
+        <section class="fail-router-section">
+            <div class="form-card">
+                <h2>Simulate Failed Router</h2>
+                <label for="failedRouter">Failed Router:</label>
+                <input type="number" id="failedRouter" min="1" placeholder="Enter failed router">
+                <button id="failRouter">Mark Router as Failed</button>
+            </div>
+        </section>
+
+        <div id="network-container">
+            <h3>Network Graph</h3><br>
+            <div id="network"></div>
+        </div>
+
+        <section id="result" class="result hidden"></section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
